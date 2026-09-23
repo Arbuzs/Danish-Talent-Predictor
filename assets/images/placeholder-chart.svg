@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="480" viewBox="0 0 760 480">
+  <rect width="760" height="480" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="759" height="479" fill="none" stroke="#e4e0d8"/>
+  <g stroke="#e4e0d8">
+    <line x1="60" y1="40" x2="60" y2="420"/>
+    <line x1="60" y1="420" x2="720" y2="420"/>
+  </g>
+  <g fill="#a4302f">
+    <rect x="100" y="300" width="60" height="120"/>
+    <rect x="200" y="220" width="60" height="200"/>
+    <rect x="300" y="150" width="60" height="270"/>
+    <rect x="400" y="260" width="60" height="160"/>
+    <rect x="500" y="100" width="60" height="320"/>
+    <rect x="600" y="190" width="60" height="230"/>
+  </g>
+  <text x="380" y="460" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#5c5c5c">
+    Replace with real chart — assets/images/placeholder-chart.svg
+  </text>
+</svg>
