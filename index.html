@@ -3,30 +3,219 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Danish Talent Predictor — Blog</title>
-  <meta name="description" content="Data-driven scouting: predicting Danish football's next breakout talents.">
+  <title>Who Is the Next Danish Talent? — Danish Talent Predictor</title>
+  <meta name="description" content="Model predictions for Danish football's 26-27 season breakout stars, player by player, plus the technicals behind the model.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <p class="site-title"><a href="index.html">Danish Talent Predictor</a></p>
-      <nav class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="posts/who-is-the-next-danish-talent.html">Latest Article</a>
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-    </div>
-  </header>
+  <main class="article">
+    <header class="article__header">
+      <h1 class="article__title">Who Is the Next Danish Talent?</h1>
+    </header>
 
-  <main>
-    <ul class="post-list">
-      <li>
-        <p class="post-list__meta">Season 2026/27 Preview</p>
-        <h2><a href="posts/who-is-the-next-danish-talent.html">Who Is the Next Danish Talent?</a></h2>
-        <p>How we built a model to predict Danish football's next breakout talents — the method, the predictions, and the technicals behind them.</p>
-      </li>
-    </ul>
+    <div class="article__body">
+
+      <p>
+        The model used 25/26 season performance data and data from past seasons to predict the
+        if the player's value will double for the 27/28 season.
+      </p>
+
+      <!-- ================= PREDICTIONS TABLE ================= -->
+      <p class="section-tag">The Predictions</p>
+      <h2>26/27 breakout prediction accuracy</h2>
+
+      <div class="predictions-wrapper">
+        <table class="predictions">
+          <caption>Model output — breakout prediction accuracy</caption>
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Prediction Accuracy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>D. Osorio</td><td><span class="badge">83.6%</span></td></tr>
+            <tr><td>L. Nene</td><td><span class="badge">80.0%</span></td></tr>
+            <tr><td>M. Cherif</td><td><span class="badge">76.2%</span></td></tr>
+            <tr><td>J. Vester</td><td><span class="badge">72.8%</span></td></tr>
+            <tr><td>O. Hyseni</td><td><span class="badge">72.7%</span></td></tr>
+            <tr><td>P. Junior</td><td><span class="badge">72.4%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Read this list as a ranking of upside, not certainty — an accuracy of 70% still means
+        roughly three in ten similar players don't pan out. The value is in surfacing names worth
+        watching sooner rather than later.
+      </p>
+
+      <hr class="section-divider">
+
+      <!-- ================= PLAYER PROFILES ================= -->
+      <p class="section-tag">Player Spotlights</p>
+      <h2>How each breakout candidate's season is going</h2>
+
+      <section class="player-section">
+        <figure class="player-section__media">
+          <img src="assets/images/Osorio.jpg" alt="D. Osorio">
+        </figure>
+        <div class="player-section__content">
+          <h3>D. Osorio <span class="badge">83.6%</span></h3>
+          <p>
+            When Crystal Palace paid FC Midtjylland &euro;32 million for Dario Osorio this year,
+            it wasn't just a big fee &mdash; it became the most expensive transfer out of
+            Scandinavia in football history. That number alone says everything about how the
+            25/26 season went for the Chilean international: a leap from promising young striker
+            to a certified statement sale, and the headline case for why the model weighs
+            market outcomes so heavily.
+          </p>
+        </div>
+      </section>
+
+      <section class="player-section player-section--reverse">
+        <figure class="player-section__media">
+          <img src="assets/images/el_nene.jpeg" alt="L. Nene">
+        </figure>
+        <div class="player-section__content">
+          <h3>L. Nene <span class="badge">80.0%</span></h3>
+          <p>
+            Nene's season has been a quieter one by comparison. Still tied to FC Nordsj&aelig;lland,
+            the Ivorian forward has spent this campaign on loan at Swiss side Lausanne-Sport,
+            where he's mostly played a substitute role &mdash; he wasn't even involved when
+            Lausanne faced St. Gallen in the Conference League playoff. But the numbers underneath
+            tell a better story: five league goals last season from largely bench minutes, enough
+            that Lausanne have already built in an option to make the move permanent.
+          </p>
+        </div>
+      </section>
+
+      <section class="player-section">
+        <figure class="player-section__media">
+          <img src="assets/images/Cherif.webp" alt="M. Cherif">
+        </figure>
+        <div class="player-section__content">
+          <h3>M. Cherif <span class="badge">76.2%</span></h3>
+          <p>
+            Cherif's route to the Superliga reads like the sport's favourite kind of scouting
+            story. Guinean-born, he started out at a small academy in Conakry, tried his luck in
+            Turkey with Ankaragücü's youth side, and only found a real foothold in Denmark's third
+            tier with Ish&oslash;j &mdash; before S&oslash;nderjyske came calling in 2024. Two
+            contract extensions later (the latest through 2031, complete with a new shirt number),
+            the 20-year-old has gone from trial player to first-team fixture, and picked up his
+            first senior Guinea call-up along the way.
+          </p>
+        </div>
+      </section>
+
+      <section class="player-section player-section--reverse">
+        <figure class="player-section__media">
+          <img src="assets/images/jakob_vester.jpg" alt="J. Vester">
+        </figure>
+        <div class="player-section__content">
+          <h3>J. Vester <span class="badge">72.8%</span></h3>
+          <p>
+            Vester's season ended with Viborg cashing in &mdash; a record sale to Norwegian club
+            Sandefjord worth roughly half a million euros (about four million kroner) plus
+            bonuses, with a resale clause attached that could make the deal worth considerably
+            more down the line. For a 21-year-old midfielder, that's the kind of number clubs
+            notice.
+          </p>
+        </div>
+      </section>
+
+      <section class="player-section">
+        <figure class="player-section__media">
+          <img src="assets/images/olti_hyseni.webp" alt="O. Hyseni">
+        </figure>
+        <div class="player-section__content">
+          <h3>O. Hyseni <span class="badge">72.7%</span></h3>
+          <p>
+            Few breakout stories this season carry as much weight as Hyseni's. Born in Denmark to
+            parents who fled Kosovo as refugees, he became S&oslash;nderjyske's youngest-ever
+            Superliga goalscorer as a teenager, then extended his contract to 2029 off the back of
+            a hot start to 25/26 &mdash; only for Br&oslash;ndby to make it a moot point anyway.
+            Their record &euro;2.65 million move (rising to &euro;3.2 million) reunited him with
+            the coach who developed him, and he marked his Br&oslash;ndby debut with the winning
+            goal against Viborg.
+          </p>
+        </div>
+      </section>
+
+      <section class="player-section player-section--reverse">
+        <figure class="player-section__media">
+          <img src="assets/images/Prince_Aumako.jpeg" alt="P. Junior">
+        </figure>
+        <div class="player-section__content">
+          <h3>P. Junior <span class="badge">72.4%</span></h3>
+          <p>
+            Junior's first full season has been the kind scouts dream about. Straight out of
+            Ghana's Right to Dream academy &mdash; the same pipeline that produced Mohammed Kudus
+            &mdash; he scored and assisted on his Superliga debut, then finished his rookie
+            campaign as Nordsj&aelig;lland's top scorer with nine goals as the club finished
+            third. A senior Ghana call-up followed in May, and reported interest from Manchester
+            United, Juventus, PSG and Newcastle means this is unlikely to be the last we hear of
+            him.
+          </p>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- ================= TECHNICALS ================= -->
+      <p class="section-tag">Under the Hood</p>
+      <h2>The technicals</h2>
+      <p>
+        For readers who want the details: the model is a deliberately small, lightly
+        regularised XGBoost classifier, trained on historical Superliga performance data to
+        separate players likely to break out ("Value Doubled") from those on a normal
+        development curve ("Value Normal").
+      </p>
+
+      <h3>What counts as a "breakout" here</h3>
+      <p>
+        Our requirement for a player is that their market value doubles in the following
+        seasons &mdash; so the model excludes anyone whose value doesn't double. But it also
+        excludes a lot of players whose value <em>did</em> double the very next season, and
+        that second part is deliberate, not a flaw.
+      </p>
+      <p>
+        If a player's value doubles immediately, the whole market has already noticed &mdash;
+        there's no window left to act on it. What we actually want are players whose value
+        spikes with a delay: good enough right now to double eventually, but not yet obvious
+        enough for the price to have moved. That gap is the buying window. So the model isn't
+        tuned to catch all 43 players who doubled in the test set &mdash; it's tuned to find the
+        ones still flying under the radar.
+      </p>
+
+      <figure class="figure figure--full">
+        <img src="assets/images/technicals_3plot.png" alt="Three panels: confusion matrix on the out-of-time test set, top 15 predictors for value doubling, and a density plot of predicted probabilities by class with the 0.7 decision threshold marked">
+        <figcaption>
+          Left to right: how the model's calls held up on unseen data, which stats mattered most,
+          and how confidently it tells the two outcomes apart.
+        </figcaption>
+      </figure>
+
+      <h3>Reading the three panels</h3>
+      <p>
+        <strong>Confusion matrix.</strong> On the out-of-time test set, the model correctly
+        clears 144 of 151 "Normal" players and flags 6 of 43 true breakouts. The 37 it misses
+        aren't all failures &mdash; many are exactly the "doubled too fast to act on" cases
+        described above.
+      </p>
+      <p>
+        <strong>Top predictors.</strong> Age comes out on top, ahead of per-90 xG, being subbed
+        out, and last season's sprint counts. Underlying quality and physical output drive the
+        signal far more than raw counting stats like goals or minutes.
+      </p>
+      <p>
+        <strong>Probability density.</strong> "Normal" and "Doubled" players cluster in genuinely
+        different probability ranges. The 0.7 threshold sits where the two curves overlap least,
+        so the model only flags players it's very confident about &mdash; on purpose, a small,
+        high-conviction shortlist rather than a long, noisy one.
+      </p>
+
+    </div>
   </main>
 
   <footer class="site-footer">

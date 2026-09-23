@@ -1,46 +1,67 @@
 /* ==========================================================================
    Danish Talent Predictor — base styles
-   Font: Escrow (licensed, self-hosted — see /assets/fonts/README.md)
+   Font: Zilla Slab (SIL Open Font License — see /assets/fonts/OFL.txt)
    ========================================================================== */
 
 @font-face {
-  font-family: "Escrow";
-  src: url("../assets/fonts/Escrow-Text.woff2") format("woff2"),
-       url("../assets/fonts/Escrow-Text.woff") format("woff");
+  font-family: "Zilla Slab";
+  src: url("../assets/fonts/ZillaSlab-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Escrow";
-  src: url("../assets/fonts/Escrow-Text-Bold.woff2") format("woff2"),
-       url("../assets/fonts/Escrow-Text-Bold.woff") format("woff");
+  font-family: "Zilla Slab";
+  src: url("../assets/fonts/ZillaSlab-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("../assets/fonts/ZillaSlab-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("../assets/fonts/ZillaSlab-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zilla Slab";
+  src: url("../assets/fonts/ZillaSlab-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Escrow";
-  src: url("../assets/fonts/Escrow-Text-Italic.woff2") format("woff2"),
-       url("../assets/fonts/Escrow-Text-Italic.woff") format("woff");
-  font-weight: 400;
+  font-family: "Zilla Slab";
+  src: url("../assets/fonts/ZillaSlab-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
 :root {
-  --font-serif: "Escrow", Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-serif: "Zilla Slab", Georgia, "Iowan Old Style", "Times New Roman", serif;
 
-  /* simple, restrained palette */
-  --color-bg: #fbfaf7;
+  /* mostly black & white, restrained palette */
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-text: #1c1c1c;
-  --color-muted: #5c5c5c;
-  --color-border: #e4e0d8;
-  --color-accent: #a4302f; /* single accent — muted brick red */
-  --color-accent-soft: #f4e6e0;
+  --color-text: #111111;
+  --color-muted: #666666;
+  --color-border: #dddddd;
+  --color-accent: #111111; /* black — no colour accent */
+  --color-accent-soft: #f0f0f0;
 
   --content-width: 720px;
   --wide-width: 980px;
@@ -69,13 +90,13 @@ img {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-text);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
 a:hover {
-  color: var(--color-text);
+  color: var(--color-muted);
 }
 
 /* ---------- Header / nav ---------- */
@@ -334,9 +355,65 @@ table.predictions td.rank {
   padding: 0.15rem 0.55rem;
   border-radius: 999px;
   background: var(--color-accent-soft);
-  color: var(--color-accent);
+  color: var(--color-text);
   font-size: 0.75rem;
   font-weight: 700;
+  border: 1px solid var(--color-border);
+}
+
+/* ---------- Player profile sections (alternating image side) ---------- */
+
+.player-section {
+  max-width: var(--wide-width);
+  margin: 2.5rem auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.player-section--reverse {
+  flex-direction: row-reverse;
+}
+
+.player-section__media {
+  flex: 0 0 300px;
+  margin: 0;
+}
+
+.player-section__media img {
+  width: 100%;
+  border: 1px solid var(--color-border);
+}
+
+.player-section__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.player-section__content h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.player-section__content p {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .player-section,
+  .player-section--reverse {
+    flex-direction: column;
+  }
+
+  .player-section__media {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
 /* ---------- Code / technical blocks ---------- */
